@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbo_vivlimitedModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="career">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="100" />
+          <Property Name="JobDescription" Type="longtext" />
+          <Property Name="HowToApply" Type="varchar" MaxLength="250" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="Publish" Type="bool" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeEdited" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="equipmentreservation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="EquipmentCategoryId" Type="smallint" />
+          <Property Name="EquipmentTypeId" Type="smallint" />
+          <Property Name="Comments" Type="varchar" MaxLength="500" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Company" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumb" Type="varchar" MaxLength="45" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="equiprentalimageslider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="150" />
+          <Property Name="ImageDescription" Type="varchar" MaxLength="150" />
+          <Property Name="EquipmentSubClassId" Type="smallint" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeEdited" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="equiprentalmainclass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EquipCategory" Type="varchar" MaxLength="100" />
+          <Property Name="ImgIconUrl" Type="varchar" MaxLength="150" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeEdited" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="equiprentalsubclass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EquipName" Type="varchar" MaxLength="45" />
+          <Property Name="Specification" Type="longtext" />
+          <Property Name="Available" Type="bool" />
+          <Property Name="Cost" Type="varchar" MaxLength="100" />
+          <Property Name="EquipRentalMainClassId" Type="smallint" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="100" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeEdited" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="homepageslider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="200" />
+          <Property Name="CaptionHeading" Type="varchar" MaxLength="150" />
+          <Property Name="CaptionDesc" Type="varchar" MaxLength="300" />
+          <Property Name="LastUpdatedBy" Type="varchar" MaxLength="45" />
+          <Property Name="LastUpdateDateTime" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="pagecontent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageTitle" Type="varchar" MaxLength="100" />
+          <Property Name="PageText" Type="longtext" />
+          <Property Name="PageUrl" Type="varchar" MaxLength="100" />
+          <Property Name="PageBannerUrl" Type="varchar" MaxLength="200" />
+          <Property Name="DefaultPageIconUrl" Type="varchar" MaxLength="200" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeEdited" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="200" />
+          <Property Name="Client" Type="varchar" MaxLength="200" />
+          <Property Name="Consultant" Type="varchar" MaxLength="200" />
+          <Property Name="DateAwarded" Type="date" />
+          <Property Name="Status" Type="varchar" MaxLength="45" />
+          <Property Name="DateCompleted" Type="date" />
+          <Property Name="EditedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeEdited" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="projectpic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectId" Type="smallint" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="200" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="45" />
+          <Property Name="DateTimeCreated" Type="datetime" Precision="0" />
+        </EntityType>
+        <Association Name="fk_EquipImageSlider_EquipRentalSubClass1">
+          <End Role="equiprentalsubclass" Type="Self.equiprentalsubclass" Multiplicity="0..1" />
+          <End Role="equiprentalimageslider" Type="Self.equiprentalimageslider" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equiprentalsubclass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equiprentalimageslider">
+              <PropertyRef Name="EquipmentSubClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EquipmentReservation_EquipRentalMainClass1">
+          <End Role="equiprentalmainclass" Type="Self.equiprentalmainclass" Multiplicity="0..1" />
+          <End Role="equipmentreservation" Type="Self.equipmentreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equiprentalmainclass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipmentreservation">
+              <PropertyRef Name="EquipmentCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EquipmentReservation_EquipRentalSubClass1">
+          <End Role="equiprentalsubclass" Type="Self.equiprentalsubclass" Multiplicity="0..1" />
+          <End Role="equipmentreservation" Type="Self.equipmentreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equiprentalsubclass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipmentreservation">
+              <PropertyRef Name="EquipmentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EquipRentalSubClass_EquipRentalMainClass1">
+          <End Role="equiprentalmainclass" Type="Self.equiprentalmainclass" Multiplicity="0..1" />
+          <End Role="equiprentalsubclass" Type="Self.equiprentalsubclass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equiprentalmainclass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equiprentalsubclass">
+              <PropertyRef Name="EquipRentalMainClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ProjectPic_Project1">
+          <End Role="project" Type="Self.project" Multiplicity="0..1" />
+          <End Role="projectpic" Type="Self.projectpic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="projectpic">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbo_vivlimitedModelStoreContainer">
+          <EntitySet Name="career" EntityType="Self.career" Schema="dbo_vivlimited" store:Type="Tables" />
+          <EntitySet Name="equipmentreservation" EntityType="Self.equipmentreservation" Schema="dbo_vivlimited" store:Type="Tables" />
+          <EntitySet Name="equiprentalimageslider" EntityType="Self.equiprentalimageslider" Schema="dbo_vivlimited" store:Type="Tables" />
+          <EntitySet Name="equiprentalmainclass" EntityType="Self.equiprentalmainclass" Schema="dbo_vivlimited" store:Type="Tables" />
+          <EntitySet Name="equiprentalsubclass" EntityType="Self.equiprentalsubclass" Schema="dbo_vivlimited" store:Type="Tables" />
+          <EntitySet Name="homepageslider" EntityType="Self.homepageslider" Schema="dbo_vivlimited" store:Type="Tables" />
+          <EntitySet Name="pagecontent" EntityType="Self.pagecontent" Schema="dbo_vivlimited" store:Type="Tables" />
+          <EntitySet Name="project" EntityType="Self.project" Schema="dbo_vivlimited" store:Type="Tables" />
+          <EntitySet Name="projectpic" EntityType="Self.projectpic" Schema="dbo_vivlimited" store:Type="Tables" />
+          <AssociationSet Name="fk_EquipImageSlider_EquipRentalSubClass1" Association="Self.fk_EquipImageSlider_EquipRentalSubClass1">
+            <End Role="equiprentalsubclass" EntitySet="equiprentalsubclass" />
+            <End Role="equiprentalimageslider" EntitySet="equiprentalimageslider" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EquipmentReservation_EquipRentalMainClass1" Association="Self.fk_EquipmentReservation_EquipRentalMainClass1">
+            <End Role="equiprentalmainclass" EntitySet="equiprentalmainclass" />
+            <End Role="equipmentreservation" EntitySet="equipmentreservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EquipmentReservation_EquipRentalSubClass1" Association="Self.fk_EquipmentReservation_EquipRentalSubClass1">
+            <End Role="equiprentalsubclass" EntitySet="equiprentalsubclass" />
+            <End Role="equipmentreservation" EntitySet="equipmentreservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EquipRentalSubClass_EquipRentalMainClass1" Association="Self.fk_EquipRentalSubClass_EquipRentalMainClass1">
+            <End Role="equiprentalmainclass" EntitySet="equiprentalmainclass" />
+            <End Role="equiprentalsubclass" EntitySet="equiprentalsubclass" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ProjectPic_Project1" Association="Self.fk_ProjectPic_Project1">
+            <End Role="project" EntitySet="project" />
+            <End Role="projectpic" EntitySet="projectpic" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbo_vivlimitedModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="homepageslider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CaptionHeading" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CaptionDesc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdatedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateDateTime" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="pagecontent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PageText" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="PageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PageBannerUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DefaultPageIconUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="EditedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeEdited" Type="DateTime" />
+        </EntityType>
+        <EntityContainer Name="dbo_vivlimitedEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="homepagesliders" EntityType="Self.homepageslider" />
+          <EntitySet Name="pagecontents" EntityType="Self.pagecontent" />
+          <EntitySet Name="careers" EntityType="dbo_vivlimitedModel.career" />
+          <EntitySet Name="equiprentalmainclasses" EntityType="dbo_vivlimitedModel.equiprentalmainclass" />
+          <EntitySet Name="equiprentalsubclasses" EntityType="dbo_vivlimitedModel.equiprentalsubclass" />
+          <EntitySet Name="projects" EntityType="dbo_vivlimitedModel.project" />
+          <EntitySet Name="projectpics" EntityType="dbo_vivlimitedModel.projectpic" />
+          <AssociationSet Name="fk_EquipRentalSubClass_EquipRentalMainClass1" Association="dbo_vivlimitedModel.fk_EquipRentalSubClass_EquipRentalMainClass1">
+            <End Role="equiprentalmainclass" EntitySet="equiprentalmainclasses" />
+            <End Role="equiprentalsubclass" EntitySet="equiprentalsubclasses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ProjectPic_Project1" Association="dbo_vivlimitedModel.fk_ProjectPic_Project1">
+            <End Role="project" EntitySet="projects" />
+            <End Role="projectpic" EntitySet="projectpics" />
+          </AssociationSet>
+          <EntitySet Name="equiprentalimagesliders" EntityType="dbo_vivlimitedModel.equiprentalimageslider" />
+          <AssociationSet Name="fk_EquipImageSlider_EquipRentalSubClass1" Association="dbo_vivlimitedModel.fk_EquipImageSlider_EquipRentalSubClass1">
+            <End Role="equiprentalsubclass" EntitySet="equiprentalsubclasses" />
+            <End Role="equiprentalimageslider" EntitySet="equiprentalimagesliders" />
+          </AssociationSet>
+          <EntitySet Name="equipmentreservations" EntityType="dbo_vivlimitedModel.equipmentreservation" />
+          <AssociationSet Name="fk_EquipmentReservation_EquipRentalMainClass1" Association="dbo_vivlimitedModel.fk_EquipmentReservation_EquipRentalMainClass1">
+            <End Role="equiprentalmainclass" EntitySet="equiprentalmainclasses" />
+            <End Role="equipmentreservation" EntitySet="equipmentreservations" />
+          </AssociationSet>
+          <AssociationSet Name="fk_EquipmentReservation_EquipRentalSubClass1" Association="dbo_vivlimitedModel.fk_EquipmentReservation_EquipRentalSubClass1">
+            <End Role="equiprentalsubclass" EntitySet="equiprentalsubclasses" />
+            <End Role="equipmentreservation" EntitySet="equipmentreservations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="career">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="JobDescription" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="HowToApply" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ExpiryDate" Type="DateTime" />
+          <Property Name="Publish" Type="Boolean" />
+          <Property Name="EditedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeEdited" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="equiprentalmainclass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ImgIconUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EditedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeEdited" Type="DateTime" />
+          <NavigationProperty Name="equiprentalsubclasses" Relationship="dbo_vivlimitedModel.fk_EquipRentalSubClass_EquipRentalMainClass1" FromRole="equiprentalmainclass" ToRole="equiprentalsubclass" />
+          <NavigationProperty Name="equipmentreservations" Relationship="dbo_vivlimitedModel.fk_EquipmentReservation_EquipRentalMainClass1" FromRole="equiprentalmainclass" ToRole="equipmentreservation" />
+        </EntityType>
+        <EntityType Name="equiprentalsubclass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Specification" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="Available" Type="Boolean" />
+          <Property Name="Cost" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EquipRentalMainClassId" Type="Int16" />
+          <Property Name="ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EditedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeEdited" Type="DateTime" />
+          <NavigationProperty Name="equiprentalmainclass" Relationship="dbo_vivlimitedModel.fk_EquipRentalSubClass_EquipRentalMainClass1" FromRole="equiprentalsubclass" ToRole="equiprentalmainclass" />
+          <NavigationProperty Name="equiprentalimagesliders" Relationship="dbo_vivlimitedModel.fk_EquipImageSlider_EquipRentalSubClass1" FromRole="equiprentalsubclass" ToRole="equiprentalimageslider" />
+          <NavigationProperty Name="equipmentreservations" Relationship="dbo_vivlimitedModel.fk_EquipmentReservation_EquipRentalSubClass1" FromRole="equiprentalsubclass" ToRole="equipmentreservation" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Client" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Consultant" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateAwarded" Type="DateTime" />
+          <Property Name="DateCompleted" Type="DateTime" />
+          <Property Name="Status" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="EditedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeEdited" Type="DateTime" />
+          <NavigationProperty Name="projectpics" Relationship="dbo_vivlimitedModel.fk_ProjectPic_Project1" FromRole="project" ToRole="projectpic" />
+        </EntityType>
+        <EntityType Name="projectpic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="Int16" />
+          <Property Name="ImageUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DateTimeCreated" Type="DateTime" />
+          <NavigationProperty Name="project" Relationship="dbo_vivlimitedModel.fk_ProjectPic_Project1" FromRole="projectpic" ToRole="project" />
+        </EntityType>
+        <Association Name="fk_EquipRentalSubClass_EquipRentalMainClass1">
+          <End Type="dbo_vivlimitedModel.equiprentalmainclass" Role="equiprentalmainclass" Multiplicity="0..1" />
+          <End Type="dbo_vivlimitedModel.equiprentalsubclass" Role="equiprentalsubclass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equiprentalmainclass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equiprentalsubclass">
+              <PropertyRef Name="EquipRentalMainClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ProjectPic_Project1">
+          <End Type="dbo_vivlimitedModel.project" Role="project" Multiplicity="0..1" />
+          <End Type="dbo_vivlimitedModel.projectpic" Role="projectpic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="projectpic">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="equiprentalimageslider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ImageDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EquipmentSubClassId" Type="Int16" />
+          <NavigationProperty Name="equiprentalsubclass" Relationship="dbo_vivlimitedModel.fk_EquipImageSlider_EquipRentalSubClass1" FromRole="equiprentalimageslider" ToRole="equiprentalsubclass" />
+          <Property Name="DateTimeEdited" Type="DateTime" />
+          <Property Name="EditedBy" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="fk_EquipImageSlider_EquipRentalSubClass1">
+          <End Type="dbo_vivlimitedModel.equiprentalsubclass" Role="equiprentalsubclass" Multiplicity="0..1" />
+          <End Type="dbo_vivlimitedModel.equiprentalimageslider" Role="equiprentalimageslider" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equiprentalsubclass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equiprentalimageslider">
+              <PropertyRef Name="EquipmentSubClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="equipmentreservation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumb" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="EquipmentCategoryId" Type="Int16" />
+          <Property Name="EquipmentTypeId" Type="Int16" />
+          <Property Name="Comments" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="equiprentalmainclass" Relationship="dbo_vivlimitedModel.fk_EquipmentReservation_EquipRentalMainClass1" FromRole="equipmentreservation" ToRole="equiprentalmainclass" />
+          <NavigationProperty Name="equiprentalsubclass" Relationship="dbo_vivlimitedModel.fk_EquipmentReservation_EquipRentalSubClass1" FromRole="equipmentreservation" ToRole="equiprentalsubclass" />
+        </EntityType>
+        <Association Name="fk_EquipmentReservation_EquipRentalMainClass1">
+          <End Type="dbo_vivlimitedModel.equiprentalmainclass" Role="equiprentalmainclass" Multiplicity="0..1" />
+          <End Type="dbo_vivlimitedModel.equipmentreservation" Role="equipmentreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equiprentalmainclass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipmentreservation">
+              <PropertyRef Name="EquipmentCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_EquipmentReservation_EquipRentalSubClass1">
+          <End Type="dbo_vivlimitedModel.equiprentalsubclass" Role="equiprentalsubclass" Multiplicity="0..1" />
+          <End Type="dbo_vivlimitedModel.equipmentreservation" Role="equipmentreservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="equiprentalsubclass">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="equipmentreservation">
+              <PropertyRef Name="EquipmentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbo_vivlimitedModelStoreContainer" CdmEntityContainer="dbo_vivlimitedEntities">
+          <EntitySetMapping Name="homepagesliders">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.homepageslider">
+              <MappingFragment StoreEntitySet="homepageslider">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="CaptionHeading" ColumnName="CaptionHeading" />
+                <ScalarProperty Name="CaptionDesc" ColumnName="CaptionDesc" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="LastUpdateDateTime" ColumnName="LastUpdateDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pagecontents">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.pagecontent">
+              <MappingFragment StoreEntitySet="pagecontent">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+                <ScalarProperty Name="PageText" ColumnName="PageText" />
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="PageBannerUrl" ColumnName="PageBannerUrl" />
+                <ScalarProperty Name="DefaultPageIconUrl" ColumnName="DefaultPageIconUrl" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="DateTimeEdited" ColumnName="DateTimeEdited" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="careers">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.career">
+              <MappingFragment StoreEntitySet="career">
+                <ScalarProperty Name="DateTimeEdited" ColumnName="DateTimeEdited" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="Publish" ColumnName="Publish" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="HowToApply" ColumnName="HowToApply" />
+                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equiprentalmainclasses">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.equiprentalmainclass">
+              <MappingFragment StoreEntitySet="equiprentalmainclass">
+                <ScalarProperty Name="DateTimeEdited" ColumnName="DateTimeEdited" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="ImgIconUrl" ColumnName="ImgIconUrl" />
+                <ScalarProperty Name="EquipCategory" ColumnName="EquipCategory" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equiprentalsubclasses">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.equiprentalsubclass">
+              <MappingFragment StoreEntitySet="equiprentalsubclass">
+                <ScalarProperty Name="DateTimeEdited" ColumnName="DateTimeEdited" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="EquipRentalMainClassId" ColumnName="EquipRentalMainClassId" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="Specification" ColumnName="Specification" />
+                <ScalarProperty Name="EquipName" ColumnName="EquipName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projects">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.project">
+              <MappingFragment StoreEntitySet="project">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateTimeEdited" ColumnName="DateTimeEdited" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+                <ScalarProperty Name="DateAwarded" ColumnName="DateAwarded" />
+                <ScalarProperty Name="Consultant" ColumnName="Consultant" />
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projectpics">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.projectpic">
+              <MappingFragment StoreEntitySet="projectpic">
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DateTimeCreated" ColumnName="DateTimeCreated" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equiprentalimagesliders">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.equiprentalimageslider">
+              <MappingFragment StoreEntitySet="equiprentalimageslider">
+                <ScalarProperty Name="DateTimeEdited" ColumnName="DateTimeEdited" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
+                <ScalarProperty Name="EquipmentSubClassId" ColumnName="EquipmentSubClassId" />
+                <ScalarProperty Name="ImageDescription" ColumnName="ImageDescription" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipmentreservations">
+            <EntityTypeMapping TypeName="dbo_vivlimitedModel.equipmentreservation">
+              <MappingFragment StoreEntitySet="equipmentreservation">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumb" ColumnName="PhoneNumb" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="EquipmentTypeId" ColumnName="EquipmentTypeId" />
+                <ScalarProperty Name="EquipmentCategoryId" ColumnName="EquipmentCategoryId" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

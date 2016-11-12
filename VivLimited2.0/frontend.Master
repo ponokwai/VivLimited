@@ -1,0 +1,163 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="frontend.master.cs" Inherits="VivLimited2._0.frontend" %>
+
+<!DOCTYPE html>
+<!-- Microdata markup added by Google Structured Data Markup Helper. -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Patrick Onokwai">
+    <link runat="server" href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title><%: Page.Title %> | Viv Limited</title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:ContentPlaceHolder>
+
+    <!--Insert CSS links-->
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <%--<link href="content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/owl.carousel.css" rel="stylesheet" />
+    <link href="Content/owl.theme.css" rel="stylesheet" />
+    <link href="Content/owl.transitions.css" rel="stylesheet" />
+    <link href="Content/animate.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />--%>
+</head>
+<body>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-61499265-3', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+    <form id="form2" runat="server">
+        <asp:ScriptManager ID="ScriptManager2" runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <%--<asp:ScriptReference Name="bootstrap" />--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <!-- Navbar-->
+        <div class="navbar navbar-default navbar-static-top ">
+            <div class="container">
+                <div itemscope itemtype="http://schema.org/LocalBusiness" itemref="_url2" class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="./" class="navbar-brand">
+                        <img id="Image1" class="img-responsive visible-sm visible-xs" src="Images/viv50px.png" />
+                        <img itemprop="image" id="Image2" class="img-responsive hidden-sm hidden-xs" src="Images/viv70px.png" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a id="_url2" itemprop="url" href="./"><span class="glyphicon glyphicon-home"></span></a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span class="caret"></span></a>
+                            <ul class="dropdown-menu animated fadeInRight">
+                                <li><a href="About.aspx">History</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="ManagementTeam.aspx">Management Team</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="CompanyPolicy.aspx">Company Policy</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="HSEPolicy.aspx">HSE Policy</a></li>
+                            </ul>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/LocalBusiness" itemref="Image2" class="dropdown">
+                            <a itemprop="url" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                            <ul class="dropdown-menu animated fadeInRight">
+                                <li><a href="Engineering.aspx">Engineering</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="EquipmentRental.aspx">Equipment Rental</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="Haulage.aspx">Haulage</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="ManpowerSupply.aspx">Manpower Supply</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="Maritime.aspx">Maritime</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="ProcurementAndLogistics.aspx">Procurement & Logistics</a></li>
+                            </ul>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/LocalBusiness" itemref="Image2"><a itemprop="url" href="Projects.aspx">Projects</a></li>
+                        <li><a href="Careers.aspx">Careers</a></li>
+                        <li itemscope itemtype="http://schema.org/LocalBusiness" itemref="Image2"><a itemprop="url" href="Contact.aspx">Contact</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="FrontendContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <br />
+
+        <footer class="wow fadeInDown animated">
+
+            <div class="container social-media">
+                <p>Connect with Us</p>
+                <hr />
+                <asp:HyperLink ID="HyperLink5" CssClass="wow animated" runat="server" NavigateUrl="https://web.facebook.com/vivlimited/">
+                    <asp:Image ID="Image4" runat="server" CssClass="img-responsive" ImageUrl="~/Images/facebook.png" />
+                </asp:HyperLink>
+            </div>
+            <br />
+            <div class="container">
+
+                <p>
+                    Copyright &copy; 1993 - <%: DateTime.Now.Year %> VIV LIMITED |
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Sitemap.aspx" runat="server">Sitemap</asp:HyperLink>
+                    | <a href="http://webmail.vivlimited.com">Staff Mail</a> | <a runat="server" href="~/Account/Login.aspx"><span class="glyphicon glyphicon-user"></span></a>&nbsp;|
+                    Designed by:
+                    <asp:HyperLink ID="HyperLink2" NavigateUrl="http://www.rickwaisolutions.com" runat="server">Rickwai Solutions</asp:HyperLink>
+                </p>
+            </div>
+        </footer>
+    </form>
+    <!--Previous js location-->
+
+</body>
+</html>
+<%--<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/jquery-2.2.0.min.js") %>'> </script>--%>
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/bootstrap.min.js") %>'></script>
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/owl.carousel.min.js") %>'>'></script>
+<script type="text/javascript" src='<%= Page.ResolveClientUrl("~/Scripts/wow.min.js") %>'></script>
+<!-- adding 'active class' to image carousel -->
+<script type="text/javascript">
+    $(function () {
+        $('.item:first').addClass('active')
+    });
+</script>
+
+<!--animate motion-->
+<script>
+    new WOW().init();
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+
+

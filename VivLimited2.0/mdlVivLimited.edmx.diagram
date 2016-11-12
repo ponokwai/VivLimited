@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="710ee384c5d9455cac00ad0cb0a01bc3" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.homepageslider" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.pagecontent" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.career" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.equiprentalmainclass" Width="1.375" PointX="5.875" PointY="1.375" />
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.equiprentalsubclass" Width="1.875" PointX="8" PointY="1" />
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.project" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.projectpic" Width="1.5" PointX="3" PointY="5.25" />
+        <AssociationConnector Association="dbo_vivlimitedModel.fk_EquipRentalSubClass_EquipRentalMainClass1" />
+        <AssociationConnector Association="dbo_vivlimitedModel.fk_ProjectPic_Project1" />
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.equiprentalimageslider" Width="1.75" PointX="10.625" PointY="1.375" />
+        <AssociationConnector Association="dbo_vivlimitedModel.fk_EquipImageSlider_EquipRentalSubClass1" />
+        <EntityTypeShape EntityType="dbo_vivlimitedModel.equipmentreservation" Width="1.5" PointX="13.625" PointY="1.375" />
+        <AssociationConnector Association="dbo_vivlimitedModel.fk_EquipmentReservation_EquipRentalMainClass1" />
+        <AssociationConnector Association="dbo_vivlimitedModel.fk_EquipmentReservation_EquipRentalSubClass1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

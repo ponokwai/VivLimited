@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Home"  description="Homepage">
+    <!--<siteMapNode url="~/About.aspx" title="About Us"  description="About us page" />-->
+    <siteMapNode url="" title="About Us" description="About VIV Limited">
+      <siteMapNode url="~/About.aspx" title="History"  description="History of Viv Limited" />
+      <siteMapNode url="~/ManagementTeam.aspx" title="Management Team"  description="VIV limited Management Team" />
+      <siteMapNode url="~/CompanyPolicy.aspx" title="Company Policy"  description="VIV limited Company Policy" />
+      <siteMapNode url="~/HSEPolicy.aspx" title="HSE Policy"  description="VIV limited HSEPolicy" />
+    </siteMapNode>
+    <siteMapNode url="" title="Services"  description="Services we provide">
+      <siteMapNode url="~/Engineering.apsx" title="Engineering"  description="Civil, mechanical, and pipeline construction" />
+      <siteMapNode url="~/EquipmentRental.aspx" title="Equipment Rental"  description="Renting of marine and construction equipment" />
+      <siteMapNode url="~/Haulage.aspx" title="Haulage"  description="Transportation of goods" />
+      <siteMapNode url="~/ManpowerSupply.aspx" title="Manpower Supply"  description="Supply of labour" />
+      <siteMapNode url="~/Maritime.aspx" title="Maritime"  description="We provide shipping and marine equipment rental" />
+      <siteMapNode url="~/ProcurementAndLogistics.aspx" title="Procurement And Logistics"  description="Provide clients procurement and logistics service" />
+    </siteMapNode>
+    <siteMapNode url="~/EquipmentReservation.aspx" title="Book for an equipment"  description="We provide equipment rental service" />
+    <siteMapNode url="~/Projects.aspx" title="Projects executed"  description="Projects we have executed" />
+    <siteMapNode url="~/Careers.aspx" title="Career"  description="Working with us" />
+    <siteMapNode url="~/Contact.aspx" title="Contact Us"  description="Contact us" />
+  </siteMapNode>
+</siteMap>
