@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VivLimited2._0.Model;
 
 namespace VivLimited2._0.Management
 {
@@ -45,7 +46,7 @@ namespace VivLimited2._0.Management
 
         protected void EntityDataSource1_Inserting(object sender, EntityDataSourceChangingEventArgs e)
         {
-            projectpic myProjectPic = (projectpic)e.Entity;
+            ProjectPic myProjectPic = (ProjectPic)e.Entity;
 
             if (!string.IsNullOrEmpty(Request.QueryString.Get("ProjId")))
             {
@@ -76,7 +77,7 @@ namespace VivLimited2._0.Management
 
         protected void EntityDataSource1_Updating(object sender, EntityDataSourceChangingEventArgs e)
         {
-            projectpic myProjectPic = (projectpic)e.Entity;
+            ProjectPic myProjectPic = (ProjectPic)e.Entity;
 
             if (!string.IsNullOrEmpty(Request.QueryString.Get("ProjId")))
             {
@@ -111,7 +112,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Deleted(object sender, EntityDataSourceChangedEventArgs e)
         {
             //delete file
-            projectpic myProjectPic = (projectpic)e.Entity;
+            ProjectPic myProjectPic = (ProjectPic)e.Entity;
 
             string filePath = Server.MapPath(myProjectPic.ImageUrl);
             System.IO.File.Delete(filePath);

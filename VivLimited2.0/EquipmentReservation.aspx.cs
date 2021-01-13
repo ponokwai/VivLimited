@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Net.Mail;
 using VivLimited2._0.App_Code;
+using VivLimited2._0.Model;
 
 namespace VivLimited2._0
 {
@@ -67,7 +68,7 @@ namespace VivLimited2._0
                     //Update database
                     using (dbo_vivlimitedEntities myEntities = new dbo_vivlimitedEntities())
                     {
-                        equipmentreservation myReservation = new equipmentreservation();
+                        Model.EquipmentReservation  myReservation = new Model.EquipmentReservation();
 
                         myReservation.Name = tbxName.Text;
                         myReservation.Company = tbxCompany.Text;
@@ -79,7 +80,7 @@ namespace VivLimited2._0
                         myReservation.EndDate = Convert.ToDateTime(tbxEndDate.Text);
                         myReservation.Comments = tbxComment.Text;
 
-                        myEntities.equipmentreservations.Add(myReservation);
+                        myEntities.EquipmentReservations.Add(myReservation);
                         myEntities.SaveChanges();
                     }
 

@@ -476,6 +476,7 @@
       <DependentUpon>Maritime.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Career.cs" />
+    <Compile Include="Model\EquipmentReservation.cs" />
     <Compile Include="Model\EquipRentalImageSlider.cs" />
     <Compile Include="Model\EquipRentalMainClass.cs" />
     <Compile Include="Model\EquipRentalSubclass.cs" />
@@ -483,7 +484,7 @@
     <Compile Include="Model\PageContent.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\ProjectPic.cs" />
-    <Compile Include="Model\VivlimitedDbContext.cs" />
+    <Compile Include="Model\dbo_vivlimitedEntities.cs" />
     <Compile Include="ProcurementAndLogistics.aspx.cs">
       <DependentUpon>ProcurementAndLogistics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
