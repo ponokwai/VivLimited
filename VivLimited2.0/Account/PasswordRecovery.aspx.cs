@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VivLimited2._0.Account
 {
-    public partial class PasswordRecovery : System.Web.UI.Page
+    public partial class PasswordRecovery : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -10,7 +10,7 @@ using VivLimited2._0.App_Code;
 
 namespace VivLimited2._0
 {
-    public partial class EquipmentReservation : System.Web.UI.Page
+    public partial class EquipmentReservation : Page
     {
         Int16 _catId = -1;
         Int16 _typeId = -1;

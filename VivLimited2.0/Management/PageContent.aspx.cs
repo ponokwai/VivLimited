@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VivLimited2._0.Management
 {
-    public partial class PageContent : System.Web.UI.Page
+    public partial class PageContent : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

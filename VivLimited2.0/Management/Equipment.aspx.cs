@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VivLimited2._0.Management
 {
-    public partial class Equipment : System.Web.UI.Page
+    public partial class Equipment : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,7 @@ namespace VivLimited2._0.Management
 
         protected void EntityDataSource1_Inserting(object sender, EntityDataSourceChangingEventArgs e)
         {
-            equiprentalmainclass myEquipRentalMainClass = (equiprentalmainclass)e.Entity;
+            EquipRentalMainClass myEquipRentalMainClass = (EquipRentalMainClass)e.Entity;
 
             //Upload photo
             FileUpload FileUploadInsertTemp = (FileUpload)ListView1.InsertItem.FindControl("FileUploadInsertTemp");
@@ -40,7 +40,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Updating(object sender, EntityDataSourceChangingEventArgs e)
         {
             //Delete existing photo file if fileupload have new picture
-            equiprentalmainclass myEquipRentalMainClass = (equiprentalmainclass)e.Entity;
+            EquipRentalMainClass myEquipRentalMainClass = (EquipRentalMainClass)e.Entity;
 
             FileUpload FileUploadEditTemp = (FileUpload)ListView1.EditItem.FindControl("FileUploadEditTemp");
             if (FileUploadEditTemp.HasFile)
@@ -67,7 +67,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Deleted(object sender, EntityDataSourceChangedEventArgs e)
         {
             //Delete photo file
-            equiprentalmainclass myEquipRentalMainClass = (equiprentalmainclass)e.Entity;
+            EquipRentalMainClass myEquipRentalMainClass = (EquipRentalMainClass)e.Entity;
 
             string physicalPath = Server.MapPath(myEquipRentalMainClass.ImgIconUrl);
             System.IO.File.Delete(physicalPath);
@@ -90,7 +90,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Deleting(object sender, EntityDataSourceChangingEventArgs e)
         {
             //Check if there are sub-class entries that will be affected
-            equiprentalmainclass myEquipRentalMainClass = (equiprentalmainclass)e.Entity;
+            EquipRentalMainClass myEquipRentalMainClass = (EquipRentalMainClass)e.Entity;
             Int16 mainClassId = myEquipRentalMainClass.Id;
             //Literal ltlFeedback = (Literal)ListView1.Items[1].FindControl("ltlFeedback");
             

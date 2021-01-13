@@ -20,6 +20,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -186,23 +188,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <EntityDeploy Include="mdlVivLimited.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>mdlVivLimited.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="mdlVivLimited.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>mdlVivLimited.edmx</DependentUpon>
-      <LastGenOutput>mdlVivLimited.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="mdlVivLimited.edmx.diagram">
-      <DependentUpon>mdlVivLimited.edmx</DependentUpon>
-    </Content>
-    <Content Include="mdlVivLimited.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>mdlVivLimited.edmx</DependentUpon>
-      <LastGenOutput>mdlVivLimited.cs</LastGenOutput>
-    </Content>
     <Content Include="frontend.Master" />
     <Content Include="backend.Master" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -277,9 +262,6 @@
     <Compile Include="backend.Master.designer.cs">
       <DependentUpon>backend.Master</DependentUpon>
     </Compile>
-    <Compile Include="career.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
-    </Compile>
     <Compile Include="Careers.aspx.cs">
       <DependentUpon>Careers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -336,24 +318,12 @@
     <Compile Include="EquipmentReservation.aspx.designer.cs">
       <DependentUpon>EquipmentReservation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="equipmentreservation.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
-    </Compile>
     <Compile Include="EquipmentType.aspx.cs">
       <DependentUpon>EquipmentType.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EquipmentType.aspx.designer.cs">
       <DependentUpon>EquipmentType.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="equiprentalimageslider.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
-    </Compile>
-    <Compile Include="equiprentalmainclass.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
-    </Compile>
-    <Compile Include="equiprentalsubclass.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
     </Compile>
     <Compile Include="Errors\Error404.aspx.cs">
       <DependentUpon>Error404.aspx</DependentUpon>
@@ -449,9 +419,6 @@
     <Compile Include="Haulage.aspx.designer.cs">
       <DependentUpon>Haulage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="homepageslider.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
-    </Compile>
     <Compile Include="Management\Equipment.aspx.cs">
       <DependentUpon>Equipment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -508,24 +475,15 @@
     <Compile Include="Maritime.aspx.designer.cs">
       <DependentUpon>Maritime.aspx</DependentUpon>
     </Compile>
-    <Compile Include="mdlVivLimited.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mdlVivLimited.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mdlVivLimited.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
-    </Compile>
-    <Compile Include="mdlVivLimited.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mdlVivLimited.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="pagecontent.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Model\Career.cs" />
+    <Compile Include="Model\EquipRentalImageSlider.cs" />
+    <Compile Include="Model\EquipRentalMainClass.cs" />
+    <Compile Include="Model\EquipRentalSubclass.cs" />
+    <Compile Include="Model\HomePageSlider.cs" />
+    <Compile Include="Model\PageContent.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\ProjectPic.cs" />
+    <Compile Include="Model\VivlimitedDbContext.cs" />
     <Compile Include="ProcurementAndLogistics.aspx.cs">
       <DependentUpon>ProcurementAndLogistics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -533,18 +491,12 @@
     <Compile Include="ProcurementAndLogistics.aspx.designer.cs">
       <DependentUpon>ProcurementAndLogistics.aspx</DependentUpon>
     </Compile>
-    <Compile Include="project.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
-    </Compile>
     <Compile Include="ProjectDetails.aspx.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProjectDetails.aspx.designer.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="projectpic.cs">
-      <DependentUpon>mdlVivLimited.tt</DependentUpon>
     </Compile>
     <Compile Include="ProjectPictures.aspx.cs">
       <DependentUpon>ProjectPictures.aspx</DependentUpon>

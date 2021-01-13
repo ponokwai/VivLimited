@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VivLimited2._0.Frontdesk
 {
-    public partial class EquipmentReservation : System.Web.UI.Page
+    public partial class EquipmentReservation : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

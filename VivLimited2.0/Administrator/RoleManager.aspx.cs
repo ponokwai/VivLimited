@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace VivLimited2._0.Administrator
 {
-    public partial class RoleManager : System.Web.UI.Page
+    public partial class RoleManager : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace VivLimited2._0.Administrator
 {
-    public partial class AllUserAccount : System.Web.UI.Page
+    public partial class AllUserAccount : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

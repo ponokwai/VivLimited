@@ -11,7 +11,7 @@ using VivLimited2._0.App_Code;
 
 namespace VivLimited2._0
 {
-    public class Global : System.Web.HttpApplication
+    public class Global : HttpApplication
     {
 
         protected void Application_Start(object sender, EventArgs e)

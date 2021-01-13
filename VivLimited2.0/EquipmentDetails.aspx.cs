@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VivLimited2._0
 {
-    public partial class EquipmentDetails : System.Web.UI.Page
+    public partial class EquipmentDetails : Page
     {
         protected string GetBooleanText(object booleanValue)
         {
