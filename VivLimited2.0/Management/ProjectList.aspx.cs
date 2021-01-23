@@ -17,7 +17,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Inserting(object sender, EntityDataSourceChangingEventArgs e)
         {
             //Save Edited By and Date-Time Edited fields
-            project myProject = (project)e.Entity;
+            Project myProject = (Project)e.Entity;
             myProject.EditedBy = User.Identity.Name;
             myProject.DateTimeEdited = DateTime.Now;
         }
@@ -25,14 +25,14 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Updating(object sender, EntityDataSourceChangingEventArgs e)
         {
             //Save Edited By and Date-Time Edited fields
-            project myProject = (project)e.Entity;
+            Project myProject = (Project)e.Entity;
             myProject.EditedBy = User.Identity.Name;
             myProject.DateTimeEdited = DateTime.Now;
         }
 
         protected void EntityDataSource1_Deleting(object sender, EntityDataSourceChangingEventArgs e)
         {
-            project myProject = (project)e.Entity;
+            Project myProject = (Project)e.Entity;
             //Delete project pictures
             using (dbo_vivlimitedEntities myEntities = new dbo_vivlimitedEntities())
             {

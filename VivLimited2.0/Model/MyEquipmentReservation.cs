@@ -1,9 +1,9 @@
-namespace VivLimited2._0.Model
+namespace VivLimited2._0
 {
     using System;
     using System.Collections.Generic;
     
-    public class EquipmentReservation
+    public class MyEquipmentReservation
     {
         public int Id { get; set; }
         public string Name { get; set; }

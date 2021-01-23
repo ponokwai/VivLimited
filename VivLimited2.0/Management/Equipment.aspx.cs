@@ -91,7 +91,7 @@ namespace VivLimited2._0.Management
         {
             //Check if there are sub-class entries that will be affected
             EquipRentalMainClass myEquipRentalMainClass = (EquipRentalMainClass)e.Entity;
-            Int16 mainClassId = myEquipRentalMainClass.Id;
+            var mainClassId = myEquipRentalMainClass.Id;
             //Literal ltlFeedback = (Literal)ListView1.Items[1].FindControl("ltlFeedback");
             
 

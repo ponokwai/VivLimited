@@ -30,7 +30,7 @@ namespace VivLimited2._0.Management
 
         protected void EntityDataSource1_Inserting(object sender, EntityDataSourceChangingEventArgs e)
         {
-            equiprentalsubclass myEquipSubClass = (equiprentalsubclass)e.Entity;
+            EquipRentalSubclass myEquipSubClass = (EquipRentalSubclass)e.Entity;
             Int16 EquipMainId = Convert.ToInt16(Request.QueryString.Get("ClassId"));
 
             //Upload photo
@@ -55,7 +55,7 @@ namespace VivLimited2._0.Management
 
         protected void EntityDataSource1_Updating(object sender, EntityDataSourceChangingEventArgs e)
         {
-            equiprentalsubclass myEquipSubClass = (equiprentalsubclass)e.Entity;
+            EquipRentalSubclass myEquipSubClass = (EquipRentalSubclass)e.Entity;
             //if fileupload has file, delete old file then upload new file
 
             FileUpload FileUploadEditItem = (FileUpload)ListView1.EditItem.FindControl("FileUploadEditItem");
@@ -83,7 +83,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Deleted(object sender, EntityDataSourceChangedEventArgs e)
         {
             //Remove photo file
-            equiprentalsubclass myEquipSubClass = (equiprentalsubclass)e.Entity;
+            EquipRentalSubclass myEquipSubClass = (EquipRentalSubclass)e.Entity;
             string physicalPath = Server.MapPath(myEquipSubClass.ImageUrl);
             System.IO.File.Delete(physicalPath);
         }
@@ -111,10 +111,10 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Deleting(object sender, EntityDataSourceChangingEventArgs e)
         {
             //Remove photo slider collection
-            equiprentalsubclass mySubClass = (equiprentalsubclass)e.Entity;
+            EquipRentalSubclass mySubClass = (EquipRentalSubclass)e.Entity;
             using (dbo_vivlimitedEntities myEntities = new dbo_vivlimitedEntities())
             {
-                var Sliders = from s in myEntities.equiprentalimagesliders
+                var Sliders = from s in myEntities.equiprentalimageSliders
                               where s.EquipmentSubClassId == mySubClass.Id
                               select s;
                 if (Sliders.Any())
@@ -126,7 +126,7 @@ namespace VivLimited2._0.Management
                         System.IO.File.Delete(filePath);
 
                         //update dbo
-                        myEntities.equiprentalimagesliders.Remove(pic);
+                        myEntities.equiprentalimageSliders.Remove(pic);
                     }
                     myEntities.SaveChanges();
                 }

@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BackendContent" runat="server">
     <h2><asp:Literal ID="ltlTitle" runat="server"></asp:Literal></h2>
     <div class="container body-content">
-        <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id, ImageUrl" DataSourceID="EntityDataSource1" GroupItemCount="2" InsertItemPosition="LastItem" ItemType="VivLimited2._0.equiprentalimageslider" OnItemInserting="ListView1_ItemInserting">
+        <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id, ImageUrl" DataSourceID="EntityDataSource1" GroupItemCount="2" InsertItemPosition="LastItem" ItemType="VivLimited2._0.EquipRentalImageSlider" OnItemInserting="ListView1_ItemInserting">
 
             <EditItemTemplate>
                 <td runat="server" style="">

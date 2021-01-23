@@ -7,7 +7,7 @@
         <h2>
             <asp:Literal ID="ltlTitle" runat="server"></asp:Literal></h2>
         <div class="row">
-            <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id, ImageUrl" DataSourceID="EntityDataSource1" GroupItemCount="2" InsertItemPosition="LastItem" ItemType="VivLimited2._0.equiprentalsubclass" OnItemInserting="ListView1_ItemInserting">
+            <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id, ImageUrl" DataSourceID="EntityDataSource1" GroupItemCount="2" InsertItemPosition="LastItem" ItemType="VivLimited2._0.EquipRentalSubclass" OnItemInserting="ListView1_ItemInserting">
 
                 <EditItemTemplate>
                     <td runat="server" style="">

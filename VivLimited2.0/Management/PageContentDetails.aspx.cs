@@ -17,7 +17,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Updating(object sender, EntityDataSourceChangingEventArgs e)
         {
 
-            pagecontent myContent = (pagecontent)e.Entity;
+            MyPageContent myContent = (MyPageContent)e.Entity;
 
             sbyte pageId = Convert.ToSByte(Request.QueryString.Get("Id"));
             using (dbo_vivlimitedEntities myEntities = new dbo_vivlimitedEntities())

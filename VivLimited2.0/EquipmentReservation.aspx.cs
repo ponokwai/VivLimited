@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Net.Mail;
 using VivLimited2._0.App_Code;
-using VivLimited2._0.Model;
+using VivLimited2._0;
 
 namespace VivLimited2._0
 {
@@ -68,17 +68,18 @@ namespace VivLimited2._0
                     //Update database
                     using (dbo_vivlimitedEntities myEntities = new dbo_vivlimitedEntities())
                     {
-                        Model.EquipmentReservation  myReservation = new Model.EquipmentReservation();
-
-                        myReservation.Name = tbxName.Text;
-                        myReservation.Company = tbxCompany.Text;
-                        myReservation.PhoneNumb = tbxPhone.Text;
-                        myReservation.Email = tbxEmail.Text;
-                        myReservation.EquipmentCategoryId = Convert.ToInt16(ddlEquipCat.SelectedValue);
-                        myReservation.EquipmentTypeId = Convert.ToInt16(ddlEquipType.SelectedValue);
-                        myReservation.StartDate = Convert.ToDateTime(tbxStartDate.Text);
-                        myReservation.EndDate = Convert.ToDateTime(tbxEndDate.Text);
-                        myReservation.Comments = tbxComment.Text;
+                        MyEquipmentReservation myReservation = new MyEquipmentReservation
+                        {
+                            Name = tbxName.Text,
+                            Company = tbxCompany.Text,
+                            PhoneNumb = tbxPhone.Text,
+                            Email = tbxEmail.Text,
+                            EquipmentCategoryId = Convert.ToInt16(ddlEquipCat.SelectedValue),
+                            EquipmentTypeId = Convert.ToInt16(ddlEquipType.SelectedValue),
+                            StartDate = Convert.ToDateTime(tbxStartDate.Text),
+                            EndDate = Convert.ToDateTime(tbxEndDate.Text),
+                            Comments = tbxComment.Text
+                        };
 
                         myEntities.EquipmentReservations.Add(myReservation);
                         myEntities.SaveChanges();

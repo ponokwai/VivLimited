@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using VivLimited2._0.Model;
 
 namespace VivLimited2._0
 {
@@ -19,14 +18,14 @@ namespace VivLimited2._0
             //modelBuilder.Entity<homepageslider>().
         }
 
-        public virtual DbSet<HomePageSlider> homepagesliders { get; set; }
-        public virtual DbSet<PageContent> pagecontents { get; set; }
-        public virtual DbSet<Career> careers { get; set; }
-        public virtual DbSet<EquipRentalMainClass> equiprentalmainclasses { get; set; }
-        public virtual DbSet<EquipRentalSubclass> equiprentalsubclasses { get; set; }
-        public virtual DbSet<Project> projects { get; set; }
-        public virtual DbSet<ProjectPic> projectpics { get; set; }
-        public virtual DbSet<EquipRentalImageSlider> equiprentalimageSliders { get; set; }
-        public virtual DbSet<Model.EquipmentReservation> EquipmentReservations { get; set; }
+        public DbSet<HomePageSlider> homepagesliders { get; set; }
+        public DbSet<MyPageContent> pagecontents { get; set; }
+        public DbSet<Career> careers { get; set; }
+        public DbSet<EquipRentalMainClass> equiprentalmainclasses { get; set; }
+        public DbSet<EquipRentalSubclass> equiprentalsubclasses { get; set; }
+        public DbSet<Project> projects { get; set; }
+        public DbSet<ProjectPic> projectpics { get; set; }
+        public DbSet<EquipRentalImageSlider> equiprentalimageSliders { get; set; }
+        public DbSet<MyEquipmentReservation> EquipmentReservations { get; set; }
     }
 }

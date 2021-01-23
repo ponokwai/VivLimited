@@ -8,7 +8,7 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div class="row">
-                    <asp:ListView ID="ListView2" runat="server" DataKeyNames="Id, ImageUrl" DataSourceID="EntityDataSource3" GroupItemCount="1" InsertItemPosition="LastItem" ItemType="VivLimited2._0.homepageslider">
+                    <asp:ListView ID="ListView2" runat="server" DataKeyNames="Id, ImageUrl" DataSourceID="EntityDataSource3" GroupItemCount="1" InsertItemPosition="LastItem" ItemType="VivLimited2._0.HomePageSlider">
 
                         <EditItemTemplate>
                             <td runat="server" style="">

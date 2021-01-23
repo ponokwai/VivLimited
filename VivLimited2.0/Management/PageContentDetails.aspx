@@ -5,7 +5,7 @@
     <div class="container body-content">
         <h2><%: Title %></h2>
         <div class="row">
-            <asp:FormView ID="FormView1" runat="server" DataKeyNames="Id" DataSourceID="EntityDataSource1" ItemType="VivLimited2._0.pagecontent">
+            <asp:FormView ID="FormView1" runat="server" DataKeyNames="Id" DataSourceID="EntityDataSource1" ItemType="VivLimited2._0.MyPageContent">
                 <EditItemTemplate>
                     
                     <b>Page Title:</b><br />

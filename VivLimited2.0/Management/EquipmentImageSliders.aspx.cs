@@ -46,7 +46,7 @@ namespace VivLimited2._0.Management
             // Save photo file to disk and update EquipmentSubClassId, EditedBy,and DateTimeEdited fields
 
 
-            equiprentalimageslider myEquipImgSlider = (equiprentalimageslider)e.Entity;
+            EquipRentalImageSlider myEquipImgSlider = (EquipRentalImageSlider)e.Entity;
             Int16 EquipSubClassId = Convert.ToInt16(Request.QueryString.Get("SubClassId"));
 
             //Upload photo
@@ -72,7 +72,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Updating(object sender, EntityDataSourceChangingEventArgs e)
         {
             // Save new photo file to disk and delete old file and update EquipmentSubClassId, EditedBy,and DateTimeEdited fields
-            equiprentalimageslider myEquipImgSlider = (equiprentalimageslider)e.Entity;
+            EquipRentalImageSlider myEquipImgSlider = (EquipRentalImageSlider)e.Entity;
 
             FileUpload FileUploadEditItem = (FileUpload)ListView1.EditItem.FindControl("FileUploadEditItem");
             if (FileUploadEditItem.HasFile)
@@ -99,7 +99,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource1_Deleted(object sender, EntityDataSourceChangedEventArgs e)
         {
             //Delete photo file from disk
-            equiprentalimageslider myEquipImgSlider = (equiprentalimageslider)e.Entity;
+            EquipRentalImageSlider myEquipImgSlider = (EquipRentalImageSlider)e.Entity;
 
             string physicalPath = Server.MapPath(myEquipImgSlider.ImageUrl);
             System.IO.File.Delete(physicalPath);

@@ -1,10 +1,10 @@
-namespace VivLimited2._0.Model
+namespace VivLimited2._0
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class PageContent
+    public class MyPageContent
     {
         [Key]
         public int Id { get; set; }

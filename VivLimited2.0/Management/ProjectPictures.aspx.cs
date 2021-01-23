@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using VivLimited2._0.Model;
+using VivLimited2._0;
 
 namespace VivLimited2._0.Management
 {

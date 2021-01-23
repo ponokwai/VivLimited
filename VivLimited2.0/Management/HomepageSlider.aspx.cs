@@ -20,7 +20,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource3_Inserting(object sender, EntityDataSourceChangingEventArgs e)
         {
             //Upload image file and save edited by and datetime edited
-            homepageslider myHomePageSlider = (homepageslider)e.Entity;
+            HomePageSlider myHomePageSlider = (HomePageSlider)e.Entity;
 
 
             //image upload via fileupload control (insert item)
@@ -41,7 +41,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource3_Updating(object sender, EntityDataSourceChangingEventArgs e)
         {
             //Upload image file (if new file exist first delete old file) and save edited by and datetime edited
-            homepageslider myHomePageSlider = (homepageslider)e.Entity;
+            HomePageSlider myHomePageSlider = (HomePageSlider)e.Entity;
 
             FileUpload FileUploadEditItem = (FileUpload)ListView2.EditItem.FindControl("FileUploadEditItem");
             if (FileUploadEditItem.HasFile)
@@ -68,7 +68,7 @@ namespace VivLimited2._0.Management
         protected void EntityDataSource3_Deleted(object sender, EntityDataSourceChangedEventArgs e)
         {
             //Delete image file
-            homepageslider myHomePageSlider = (homepageslider)e.Entity;
+            HomePageSlider myHomePageSlider = (HomePageSlider)e.Entity;
             string imgFile = Server.MapPath(myHomePageSlider.ImageUrl);
             System.IO.File.Delete(imgFile);
 
